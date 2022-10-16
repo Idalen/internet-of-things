@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <mosquitto.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 char read_data(){
     return (char)((int)'0' + rand()%10);
@@ -17,7 +18,7 @@ int main(){
 
     mosquitto_lib_init();
 
-    mosq = mosquitto_new("data", true, NULL);
+    mosq = mosquitto_new("device1", true, NULL);
 
     rc = mosquitto_connect(mosq, "localhost", 1883, 60);
 
@@ -32,11 +33,16 @@ int main(){
     while(true){
 
         data = read_data();
-        mosquitto_publish(mosq, NULL, "/data", 1, &data, 0, false);
+        mosquitto_publish(mosq, NULL, "/temperature", 1, &data, 0, false);
+        printf("temperature: %c\n", data);
 
-        printf("data: %c\n", data);
+        data = read_data();
+        mosquitto_publish(mosq, NULL, "/humidity", 1, &data, 0, false);
+        printf("humidity: %c\n", data);
 
-        break;
+        printf("\n");
+
+        sleep(1);
     }
 
     printf("Quitting...\n");
