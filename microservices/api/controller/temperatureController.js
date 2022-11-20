@@ -1,12 +1,14 @@
 const TemperatureData =  require("../database/temperatureData.js")
+const prepareData = require("../utils/prepareData.js")
 
 class TemperatureController{
 
     getTemperature = async (req, res) => {
         try{
-            const window = req.query['window'];
+            const {name, window, measurement} = req.body;
             const temperatureData = new TemperatureData();
-            const result = await temperatureData.get(window);
+            const raw_data = await temperatureData.get(name, window, measurement);
+            const result = prepareData(raw_data)
             res.status(201).send(result);
         }
         catch(err){

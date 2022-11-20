@@ -33,11 +33,11 @@ int main(){
     while(true){
 
         data = read_data();
-        mosquitto_publish(mosq, NULL, "/temperature", 1, &data, 0, false);
+        mosquitto_publish(mosq, NULL, "/smelling_pepper/temperature", 1, &data, 0, false);
         printf("temperature: %c\n", data);
 
         data = read_data();
-        mosquitto_publish(mosq, NULL, "/humidity", 1, &data, 0, false);
+        mosquitto_publish(mosq, NULL, "/smelling_pepper/humidity", 1, &data, 0, false);
         printf("humidity: %c\n", data);
 
         printf("\n");

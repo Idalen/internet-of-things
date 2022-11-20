@@ -18,8 +18,8 @@ def on_message(client, userdata, message):
     print("received message: " , val)
 
     with InfluxDBClient(url=url, token=token, org=org) as database:
-        p = Point("Caqueiro").tag("device", "caqueiro") \
-        .field(message.topic[1:], val).time(datetime.now(pytz.UTC))
+        p = Point(message.topic.split("/")[1]) \
+        .field(message.topic.split("/")[2], val).time(datetime.now(pytz.UTC))
 
         with database.write_api(write_options=SYNCHRONOUS) as write_api:
                   write_api.write(bucket=bucket, record=p)
@@ -30,8 +30,8 @@ client = mqtt.Client("Listener")
 client.connect("localhost", 1883, 60) 
 
 client.loop_start()
-client.subscribe("/temperature")
-client.subscribe("/humidity")
+client.subscribe("/smelling_pepper/temperature")
+client.subscribe("/smelling_pepper/humidity")
 client.on_message=on_message 
 
 try:

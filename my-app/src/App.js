@@ -3,30 +3,53 @@ import Plot from 'react-plotly.js';
 import axios from "axios";
 
 class App extends React.Component {
- state = {
-     dados: []
- }
+  async getData() {
+    const res = await axios.get({
+      method: 'post',
+      url: "http://localhost:6123/temperature",
+      headers:{crossDomain:true},
+      data: {
+        "name":"smelling_pepper",
+        "window": 7,
+        "measurement" : "temperature"
+      }
+    })
+    .catch((e) => {console.log(e.data.message)}); 
 
-  componentDidMount() {
-      axios.get("http://localhost:6123/")
-          .then((response)=> {
-              const dados = response.data;
-              this.setState({dados});
-          })
+    console.log(res.json())
+    return await res.json(); 
   }
 
-    render() {
+  constructor(...args) {
+    super(...args);
+    this.state = {data: null};
+  }
+
+  componentDidMount() {
+    if (!this.state.data) {
+      (async () => {
+          try {
+              this.setState({data: await this.getData()});
+          } catch (e) {
+            console.log(e.name)   
+          }
+      })();
+    }
+  }
+
+  render() {
     return (
       <Plot
         data={[
           {
-            // x: [1, 2, 3],
-            // y: [2, 3, 6],
+            x: this.state.data.timestamp,
+            y: this.state.data.measurement,
+            //x: 0,
+            //y: 0,
             type: 'scatter',
             mode: 'lines+markers',
             marker: {color: 'blue'},
-          },
-          {type: 'bar', x: this.state.dados, y: this.state.dados}, //todo: definir o X e o Y
+          }, //todo: definir o X e o Y
         ]}
         layout={ {width: 800, height: 600, title: 'Planta Data',justifyContent:"center"} }
       />

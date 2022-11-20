@@ -3,17 +3,19 @@ const Database = require("./base.js");
 
 class TemperatureData{
 
-    get = async (window) => {
+    get = async (name, window, measurement) => {
         try {
+
             const db = new Database
             db.connect()
             
-            const query = flux`from(bucket: "${db.bucket}")
-            |> range(start: 0)
-            |> filter(fn: (r) => r["_measurement"] == "Caqueiro")
-            |> filter(fn: (r) => r["_field"] == "temperature")`
-
+            const query = flux`from(bucket: ${db.bucket})
+            |> range(start: -${window}d)
+            |> filter(fn: (r) => r["_measurement"] == ${name})
+            |> filter(fn: (r) => r["_field"] == ${measurement})`
+            
             let result = db.exec(query)
+
             return result
 
         } catch (err) {
