@@ -5,7 +5,8 @@ class TemperatureController{
 
     getTemperature = async (req, res) => {
         try{
-            const {name, window, measurement} = req.body;
+            const {name, window, measurement} = req.query;
+            console.log(req.query)
             const temperatureData = new TemperatureData();
             const raw_data = await temperatureData.get(name, window, measurement);
             const result = prepareData(raw_data)

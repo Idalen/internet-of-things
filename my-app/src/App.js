@@ -4,37 +4,35 @@ import axios from "axios";
 
 class App extends React.Component {
   async getData() {
-    const res = await axios.get({
-      method: 'post',
-      url: "http://localhost:6123/temperature",
-      headers:{crossDomain:true},
-      data: {
-        "name":"smelling_pepper",
-        "window": 7,
-        "measurement" : "temperature"
-      }
-    })
-    .catch((e) => {console.log(e.data.message)}); 
-
-    console.log(res.json())
-    return await res.json(); 
+    const res = await axios.get(
+      'http://localhost:6123/temperature/',
+      {params: {
+        name:'smelling_pepper',
+        window: "7",
+        measurement : 'temperature'}
+      },
+      {headers:{crossDomain:true}}
+    )
+    .catch((e) => {
+      console.log(e)
+    }); 
+    
+    return await res.data; 
   }
-
+  
   constructor(...args) {
     super(...args);
-    this.state = {data: null};
+    this.state = {data: {"timestamp": [], "measurement":[]}};
   }
-
+  
   componentDidMount() {
-    if (!this.state.data) {
-      (async () => {
-          try {
-              this.setState({data: await this.getData()});
-          } catch (e) {
-            console.log(e.name)   
-          }
+    (async () => {
+        try {
+          this.setState({data: await this.getData()});
+        } catch (e) {
+          console.log(e)
+        }
       })();
-    }
   }
 
   render() {

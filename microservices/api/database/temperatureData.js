@@ -10,9 +10,10 @@ class TemperatureData{
             db.connect()
             
             const query = flux`from(bucket: ${db.bucket})
-            |> range(start: -${window}d)
+            |> range(start: -${parseInt(window)}d)
             |> filter(fn: (r) => r["_measurement"] == ${name})
-            |> filter(fn: (r) => r["_field"] == ${measurement})`
+            |> filter(fn: (r) => r["_field"] == ${measurement})
+            |> aggregateWindow(every: 1h, fn: mean, createEmpty: false)`
             
             let result = db.exec(query)
 
