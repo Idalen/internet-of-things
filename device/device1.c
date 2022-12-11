@@ -20,7 +20,7 @@ int main(){
 
     mosq = mosquitto_new("device1", true, NULL);
 
-    rc = mosquitto_connect(mosq, "localhost", 1883, 60);
+    rc = mosquitto_connect(mosq, "localhost", 8121, 60);
 
     if(rc!=0){
         printf("Client could not connect to broker :( Error code: %d \n", rc);

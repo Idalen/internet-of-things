@@ -1,0 +1,42 @@
+services: 
+  web-app:
+    build: 
+      context: ./app
+      dockerfile: dockerfile
+    container_name: iotWebApp
+    restart: always
+    depends_on: 
+      - web-server
+    ports: 
+      - 8421:3000
+  
+  web-server:
+    build: 
+      context: ./server
+      dockerfile: dockerfile
+    container_name: iotWebServer
+    depends_on: 
+      - database
+    ports:
+      - 8321:3333
+     
+  worker:
+    build: 
+      context: ./worker
+      dockerfile: dockerfile
+    container_name: iotWorker
+    depends_on:
+      - database
+      - mqtt
+
+  database:
+    image: influxdb
+    container_name: iotDatabase
+    ports:
+      - 8221:8086
+  
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: iotMqtt
+    ports:
+      - 8121:1883
