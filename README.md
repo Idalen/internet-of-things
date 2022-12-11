@@ -45,13 +45,13 @@ Nossa aplicação foi desenvolvida em React.js utilizando a biblioteca de visual
 
 A aplicação refere-se a quão bem a interface foi construída; se a interface está realizando a comunicação com o micro-serviço; e, se está exibindo as informações do broker corretamente; relatório técnico (no gitlab) explicando o que foi feito e as tecnologias utilizadas; Container do Docker com as configurações de instalação e execução.
 
-#### Vantagens ####
+###### Vantagens ######
 
 - Facilidade de criação
 - Frameworks prontas para tratar requisições e acesso
 - Flexibilidade do javascript e seus módulos
 
-#### Desvantagens ####
+###### Desvantagens ######
 
 - Segurança precisa ser mais robusta
 - Manuseio de requests pode ser lento no browser
@@ -61,14 +61,14 @@ A aplicação refere-se a quão bem a interface foi construída; se a interface 
 
 A instalação do Broker no servidor disponibilizado; configuração do broker; e, relatório técnico (no gitlab) explicando o que foi feito e as tecnologias utilizadas; Container do Docker com as configurações de instalação e execução.
 
-#### Vantagens ####
+###### Vantagens ######
 
 - Lightweight
 - Escrito em C, fácil interação com Python
 - Suporte TLS
 - Instalação e embedding simples
 
-#### Desvantagens ####
+###### Desvantagens ######
 
 - Sem suporte para cluster
 - Escala dificultada
@@ -78,13 +78,13 @@ A instalação do Broker no servidor disponibilizado; configuração do broker; 
 
 O armazenamento refere-se ao modelo do banco de dados; definição dos dados; e, relatório técnico (no gitlab) explicando o que foi feito e as tecnologias utilizadas; Container do Docker com as configurações de instalação e execução.
 
-#### Vantagens ####
+###### Vantagens ######
 
 - Altamente expansível
 - Amplamente compatível com o padrão SQL
 - Possível processar tipos de dados complexos (por exemplo, dados geográficos)
 
-#### Desvantagens ####
+###### Desvantagens ######
 
 - Falta de tabelas orientadas por índice
 - Documentação expansível disponível apenas em inglês
@@ -94,14 +94,14 @@ O armazenamento refere-se ao modelo do banco de dados; definição dos dados; e,
 
 O micro-serviço refere-se a coordenar outros componentes; gerenciar as inserções no banco de dados; conexão com o broker MQTT; e, relatório técnico (no gitlab) explicando o que foi feito e as tecnologias utilizadas; Container do Docker com as configurações de instalação e execução.
 
-#### Vantagens ####
+###### Vantagens ######
 
 - Bibliotecas expansivas
 - Programação rápida e eficiente
 - Projetos prévios com contexto similar
 - Grande comunidade de apoio
 
-#### Desvantagens ####
+###### Desvantagens ######
 
 - Comparativamente ineficiente
 - Mais lento do que linguagens compiladas
