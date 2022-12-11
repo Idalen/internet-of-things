@@ -113,6 +113,8 @@ A principal dificuldade observada ocorre devido ao uso de diferentes tecnologias
 
 ## Resultados Obtidos ##
 
+A aplicação é capaz de fornecer estatísticas a respeito da condição do caqueiro em tempo real. Dessa forma, pode-se dizer que houve um ótimo resultado, uma vez que o projeto permite acompanharmos detalhes em tempo real da planta à distância. 
+
 ## Hardware Utilizado ##
 
 Os principais componentes necessários para o funcionamento devido da parte física do projeto são:
@@ -126,7 +128,9 @@ Os principais componentes necessários para o funcionamento devido da parte fís
 
 Além destes, também foram utilizados componentes auxiliares para a conexão do sistema, como jumpers macho-fêmea e macho-macho.
 
-## Metodologia de Execução Configurações ##
+## Metodologia de Execução ##
+
+## Configurações ##
 
 Foram usadas as configurações padrões de cada ferramenta utilizada, assim como as portas sugeridas pela documentação dos sensores utilizados e pela documentação da ESP32.
 
