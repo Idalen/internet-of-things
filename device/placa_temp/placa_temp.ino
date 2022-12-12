@@ -7,8 +7,8 @@
 #define SENSOR_SOLO 33
 
 // WiFi
-const char *ssid = "NET_2G95BBEB"; // Enter your WiFi name
-const char *password = "6895BBEB";  // Enter WiFi password
+const char *ssid = "SEU_WIFI_AQUI"; // Enter your WiFi name
+const char *password = "SUA_SENHA_AQUI";  // Enter WiFi password
 
 // MQTT Broker
 const char *mqtt_broker = "andromeda.lasdpc.icmc.usp.br"; //setar para o andromeda
