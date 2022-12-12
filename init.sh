@@ -1,0 +1,2 @@
+docker-compose up --build
+docker exec iotDatabase influx setup --bucket data --org users --password 11215719 --username docker --token 1LWy6GO7ZRQy0CnzzNZTA_KUhgznI4b78xWPvFyAm17H9tYEImJ8mXYqZmvVVCWG9fXwTUDABPvmIS68kBrr8g== --force

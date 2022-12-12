@@ -3,7 +3,7 @@ const {InfluxDB, flux} = require('@influxdata/influxdb-client')
 class Database{
     
     url = "http://database:8086"
-    token = "m0G93Wj5Au6HuXsutfpJoNuhqOOQ9ZjyQ7fere-7ExvcQfwv39AOdXSJ3tbccphyuoZyBcPyHvucSMsGmGA91w=="
+    token = "1LWy6GO7ZRQy0CnzzNZTA_KUhgznI4b78xWPvFyAm17H9tYEImJ8mXYqZmvVVCWG9fXwTUDABPvmIS68kBrr8g=="
     org = "users"
     bucket = "data"
 

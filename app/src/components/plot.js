@@ -5,13 +5,13 @@ import axios from "axios";
 class GraphPlot extends React.Component {
   async getData() {
     const res = await axios.get(
-      'http://server:3000/measure/',
+      'http://localhost:8321/measure/',
       {params: {
         name:'smelling_pepper',
         window: "7",
         measurement : this.props.measure}
       },
-      {headers:{crossDomain:true}}
+      {headers:{crossDomain:true, 'Access-Control-Allow-Origin': '*'}},
     )
     .catch((e) => {
       console.log(e)

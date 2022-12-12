@@ -10,6 +10,7 @@ class MeasureController{
             const measureData = new MeasureData();
             const raw_data = await measureData.get(name, window, measurement);
             const result = prepareData(raw_data)
+            res.header("Access-Control-Allow-Origin", "*");
             res.status(201).send(result);
         }
         catch(err){

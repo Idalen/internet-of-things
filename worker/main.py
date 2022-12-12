@@ -26,8 +26,12 @@ def on_message(client, userdata, message):
     
 
 
+print("Initializing MQTT worker")
+
 client = mqtt.Client("Listener")
-client.connect("broker", 1883, 60) 
+client.connect("broker", 1883, 60)
+
+print("Connected to broker at 'broker:1883'")
 
 client.loop_start()
 client.subscribe("/smelling_pepper/temperature")
