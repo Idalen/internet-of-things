@@ -6,7 +6,7 @@ from datetime import datetime
 import pytz
 
 # TODO: CRIAR DOTENV PARA DADOS ABAIXO!
-url = 'http://localhost:8086'
+url = 'http://database:8086'
 token = '1LWy6GO7ZRQy0CnzzNZTA_KUhgznI4b78xWPvFyAm17H9tYEImJ8mXYqZmvVVCWG9fXwTUDABPvmIS68kBrr8g=='
 org = 'users'
 bucket = 'data'
@@ -27,7 +27,7 @@ def on_message(client, userdata, message):
 
 
 client = mqtt.Client("Listener")
-client.connect("localhost", 1883, 60) 
+client.connect("broker", 1883, 60) 
 
 client.loop_start()
 client.subscribe("/smelling_pepper/temperature")

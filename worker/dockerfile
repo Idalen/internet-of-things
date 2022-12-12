@@ -1,8 +1,15 @@
 FROM python
 
+RUN /bin/bash -c echo "Setting WORKDIR"
 WORKDIR /usr/src/worker
 
+RUN /bin/bash -c echo "Copying requirements.txt"
+COPY requirements.txt .
+
+RUN /bin/bash -c echo "Run pip"
 RUN pip install -r requirements.txt
+
+RUN /bin/bash -c echo "Copying files"
 COPY . .
 
 CMD [ "python", "main.py" ]
