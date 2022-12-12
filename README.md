@@ -113,7 +113,7 @@ A principal dificuldade observada ocorre devido ao uso de diferentes tecnologias
 
 ## Resultados Obtidos ##
 
-A aplicação é capaz de fornecer estatísticas a respeito da condição do caqueiro em tempo real. Dessa forma, pode-se dizer que houve um ótimo resultado, uma vez que o projeto permite acompanharmos detalhes em tempo real da planta à distância. 
+A aplicação é capaz de fornecer estatísticas a respeito da condição do caqueiro em tempo real, mostrando esses dados no front-end da aplicação web em forma de gráficos de séries temporais e tabelas atualizadas conforme recebem novos dados. Dessa forma, pode-se dizer que houve um resultado bem sucedido, uma vez que o projeto permite acompanharmos detalhes em tempo real do estado de umidade e temperatura da planta, à distância, por meio de uma conexão wi-fi. 
 
 ## Hardware Utilizado ##
 
@@ -132,12 +132,19 @@ Além destes, também foram utilizados componentes auxiliares para a conexão do
 
 ## Configurações ##
 
-Foram usadas as configurações padrões de cada ferramenta utilizada, assim como as portas sugeridas pela documentação dos sensores utilizados e pela documentação da ESP32.
+Foram usadas as configurações padrões de cada ferramenta utilizada, assim como as portas sugeridas pela documentação dos sensores utilizados e pela documentação da ESP32. Segue as figuras da configuração sugerida para ESP32 e da protoboard com os sensores.
+
+![image](https://user-images.githubusercontent.com/42696793/207069687-7b7b8e4f-3ea7-4ac6-b0b6-109c9a40050f.png)
+![image](https://user-images.githubusercontent.com/42696793/207069720-1b2674eb-3e53-4b17-97da-0a65e49f0200.png)
+![image](https://user-images.githubusercontent.com/42696793/207069750-f2f71f33-7006-4342-8e90-047a2156da51.png)
 
 ## Códigos e Repositório ##
 
-Todo o código fonte, assim como suas instruções mais aprofundadas para execução podem ser acessadas pelo repositório do projeto, disponível pelo Gitlab da disciplina e também pelo Github <https://github.com/Idalen/internet-of-things>.
+Todo o código fonte, assim como suas instruções mais aprofundadas para execução podem ser acessadas pelo repositório do projeto, disponível pelo Gitlab da disciplina (https://gitlab.com/icmc-ssc0952/2022/giotgrad07) e também pelo Github (https://github.com/Idalen/internet-of-things).
 
 ## Gráficos ##
 
 O gráfico, gerado com a biblioteca Plotly, consegue ser acessado pelo módulo de aplicação web, e uma demonstração pode ser vista na imagem abaixo. A biblioteca foi escolhida por ser muito estável e dinâmica para aplicações web, encaixando perfeitamente no uso para séries temporais, usada no escopo do projeto.
+
+![image](https://user-images.githubusercontent.com/42696793/207069896-aedf4a65-e1bd-4aca-95b3-d74755253b84.png)
+
