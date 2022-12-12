@@ -146,8 +146,8 @@ void loop() {
 
     sprintf(MsgUmitMQTT,"%f",umidade_percentual);
     sprintf(MsgTempMQTT,"%f",tempC);
-    // MsgUmitMQTT = umidade_percentual;
-    // MsgTempMQTT = tempC;
+    MsgUmitMQTT = umidade_percentual;
+    MsgTempMQTT = tempC;
 
     client.publish(TOPICO_PUBLISH_HUMI,MsgUmitMQTT);
     client.subscribe(TOPICO_PUBLISH_HUMI);
