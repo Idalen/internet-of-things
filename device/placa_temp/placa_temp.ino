@@ -11,10 +11,10 @@ const char *ssid = "SEU_WIFI_AQUI"; // Enter your WiFi name
 const char *password = "SUA_SENHA_AQUI";  // Enter WiFi password
 
 // MQTT Broker
-const char *mqtt_broker = "andromeda.lasdpc.icmc.usp.br"; //setar para o andromeda
+const char *mqtt_broker = "andromeda.lasdpc.icmc.usp.br";
 const char *mqtt_username = "giotgrad07";
 const char *mqtt_password = "zmx0qoOn";
-const int mqtt_port = 8121; //setar para o andromedra
+const int mqtt_port = 8121;
 #define TOPICO_PUBLISH_TEMP "/smelling_pepper/temperature"
 #define TOPICO_PUBLISH_HUMI "/smelling_pepper/humidity"
 
